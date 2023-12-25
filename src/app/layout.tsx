@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "./Header/Header";
 
 export const metadata: Metadata = {
   title: "prrockzed News",
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Header />
         <div className="max-w-7xl mx-auto">{children}</div>
       </body>
     </html>
