@@ -32,13 +32,13 @@ const Header = () => {
               Dashboard
             </a>
             <a
-              href="#_"
+              href="/about"
               className="mr-5 font-medium leading-6 text-gray-600 no-underline hover:underline hover:text-black"
             >
               About
             </a>
             <a
-              href="#_"
+              href="/contact"
               className="mr-5 font-medium leading-6 text-gray-600 no-underline hover:underline hover:text-black"
             >
               Contact Me

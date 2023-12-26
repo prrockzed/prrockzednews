@@ -13,7 +13,7 @@ import { usePathname } from "next/navigation";
 //   description: "News app built with Next.js by prrockzed",
 // };
 
-const noAuthRequired = ["/", "/login", "/signup"];
+const noAuthRequired = ["/", "/login", "/signup", "/about", "/contact"];
 
 export default function RootLayout({
   children,
