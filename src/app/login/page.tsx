@@ -3,8 +3,10 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useAuth } from "../../../context/AuthContext";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const router = useRouter();
   const { user, login } = useAuth();
   const [data, setData] = useState({
     email: "",
@@ -16,11 +18,10 @@ const Login = () => {
 
     try {
       await login(data.email, data.password);
+      router.push("/dashboard");
     } catch (err) {
       console.log(err);
     }
-
-    console.log(data);
   };
 
   return (

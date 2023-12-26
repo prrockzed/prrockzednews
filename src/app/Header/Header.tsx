@@ -4,8 +4,13 @@ import { Bars3Icon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import React, { useState } from "react";
 import "./Header.css";
+import { useAuth } from "../../../context/AuthContext";
+import { useRouter } from "next/navigation";
+import { Nav } from "react-bootstrap";
 
-function Header() {
+const Header = () => {
+  const { user, logout } = useAuth();
+  const router = useRouter();
   return (
     <header>
       <nav>
@@ -20,18 +25,35 @@ function Header() {
         </Link>
 
         <div>
-          <ul id="navbar" className="space-x-4">
-            <li className="border-solid border-2 rounded-md">
-              <a href="/signup">Signup</a>
-            </li>
-            <li className="border-solid border-2 rounded-md">
-              <a href="/login">Login</a>
-            </li>
-          </ul>
+          {user ? (
+            <ul id="navbar" className="space-x-4">
+              <li className="border-solid border-2 rounded-md">
+                <Nav.Link
+                  onClick={() => {
+                    logout();
+                    router.push("/login");
+                  }}
+                >
+                  Logout
+                </Nav.Link>
+              </li>
+            </ul>
+          ) : (
+            <>
+              <ul id="navbar" className="space-x-4">
+                <li className="border-solid border-2 rounded-md">
+                  <a href="/signup">Signup</a>
+                </li>
+                <li className="border-solid border-2 rounded-md">
+                  <a href="/login">Login</a>
+                </li>
+              </ul>
+            </>
+          )}
         </div>
       </nav>
     </header>
   );
-}
+};
 
 export default Header;
