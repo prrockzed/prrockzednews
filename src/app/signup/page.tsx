@@ -62,7 +62,7 @@ const Signup = () => {
         </Form.Group>
 
         <Button variant="primary" type="submit">
-          Signup
+          Sign up
         </Button>
 
         <p className="small fw-bold mt-2 pt-1 mb-0">

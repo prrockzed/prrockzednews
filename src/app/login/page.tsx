@@ -70,7 +70,7 @@ const Login = () => {
         </Button>
 
         <p className="small fw-bold mt-2 pt-1 mb-0">
-          Don't have an account?{" "}
+          Don't have an account yet?{" "}
           <a href="/signup" className="link-danger">
             Signup
           </a>
