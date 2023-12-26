@@ -176,6 +176,7 @@ export default function Home() {
         <div className="flex justify-center mt-8 space-x-6">
           <a
             href="https://www.facebook.com/prrockzed/"
+            target="_blank"
             className="text-gray-400 hover:text-gray-500"
           >
             <span className="sr-only">Facebook</span>
@@ -194,6 +195,7 @@ export default function Home() {
           </a>
           <a
             href="https://www.instagram.com/prrockzed/"
+            target="_blank"
             className="text-gray-400 hover:text-gray-500"
           >
             <span className="sr-only">Instagram</span>
@@ -212,6 +214,7 @@ export default function Home() {
           </a>
           <a
             href="https://twitter.com/prrockzed"
+            target="_blank"
             className="text-gray-400 hover:text-gray-500"
           >
             <span className="sr-only">Twitter</span>
@@ -226,6 +229,7 @@ export default function Home() {
           </a>
           <a
             href="https://github.com/"
+            target="_blank"
             className="text-gray-400 hover:text-gray-500"
           >
             <span className="sr-only">GitHub</span>

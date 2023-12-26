@@ -32,15 +32,19 @@ const contact = () => {
               <ul className="get_say_info_sec">
                 <li>
                   <i className="fa fa-envelope"></i>
-                  <a href="mailto:">info@stackfindover.com</a>
+                  <a href="mailto:">prrockzed@pm.me</a>
                 </li>
                 <li>
                   <i className="fa fa-github"></i>
-                  <a href="https://github.com/prrockzed">Github</a>
+                  <a href="https://github.com/prrockzed" target="_blank">
+                    Github
+                  </a>
                 </li>
                 <li>
                   <i className="fa fa-twitter"></i>
-                  <a href="https://twitter.com/prrockzed">Twitter</a>
+                  <a href="https://twitter.com/prrockzed" target="_blank">
+                    Twitter
+                  </a>
                 </li>
               </ul>
             </div>
