@@ -3,8 +3,8 @@
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import React, { useState } from "react";
-import "./Header.css";
-import { useAuth } from "../../../context/AuthContext";
+import "./Navbar.css";
+import { useAuth } from "../../../../context/AuthContext";
 import { useRouter } from "next/navigation";
 import { Nav } from "react-bootstrap";
 

@@ -2,10 +2,10 @@
 
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "./header/Header";
+import Header from "./components/Navbar/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { AuthContextProvider } from "../../context/AuthContext";
-import ProtectedRoute from "./components/protectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute/protectedRoute";
 import { usePathname } from "next/navigation";
 
 // export const metadata: Metadata = {
