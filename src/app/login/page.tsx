@@ -31,7 +31,9 @@ const Login = () => {
         margin: "auto",
       }}
     >
-      <h1 className="text-center my-3 ">Login</h1>
+      <h2 className="mt-10 text-center text-4xl pb-6 font-bold leading-9 tracking-tight text-gray-900">
+        Login to your account
+      </h2>
       <Form onSubmit={handleLogin}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -65,13 +67,19 @@ const Login = () => {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <button
+          type="submit"
+          className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        >
           Login
-        </Button>
+        </button>
 
-        <p className="small fw-bold mt-2 pt-1 mb-0">
+        <p className="mt-10 text-center text-sm text-gray-500">
           Don't have an account yet?{" "}
-          <a href="/signup" className="link-danger">
+          <a
+            href="/signup"
+            className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+          >
             Signup
           </a>
         </p>
