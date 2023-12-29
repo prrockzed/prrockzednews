@@ -1,4 +1,6 @@
 export default function Home() {
+  console.log("Hi");
+
   return (
     <div>
       <section className="px-2 py-32 bg-white md:px-0">
