@@ -1,22 +1,24 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useRef, useEffect, useState } from "react";
 import { Button, Row } from "antd";
 import GridCard from "./gridCard";
 import ListCard from "./listCard";
 import { UnorderedListOutlined, AppstoreOutlined } from "@ant-design/icons";
 import { NEWS_API_KEY } from "./apiKey";
 
-const API_KEY = NEWS_API_KEY;
-const API_URL = `https://newsapi.org/v2/top-headlines?country=in&pageSize=20&apiKey=${API_KEY}`;
-
 function dashboard() {
   const [view, setView] = useState(true);
   const [articles, setArticles] = useState([]);
+  const [country, setCountry] = useState("in");
+  const [category, setCategory] = useState("general");
+
+  const API_KEY = NEWS_API_KEY;
+  const API_URL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&pageSize=20&apiKey=${API_KEY}`;
 
   useEffect(() => {
     fetchNews();
-  }, []);
+  }, [country, category]);
 
   const fetchNews = async () => {
     try {
@@ -28,80 +30,76 @@ function dashboard() {
     }
   };
 
+  const handleCountryChange = (e: any) => {
+    setCountry(e.target.value); // Update the selected country
+  };
+
+  const handleCategoryChange = (e: any) => {
+    setCategory(e.target.value); // Update the selected category
+  };
+
   return (
     <>
       <div
-        className="flex justify-center space-x-4 border-solid border-4 border-sky-400 rounded-lg py-2"
+        className="flex space-x-4 mt-1 justify-between"
         style={{ textAlign: "center", marginTop: "2rem", marginBottom: "2rem" }}
       >
-        <div className="dropdown inline-block relative">
-          <button className="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
-            <span className="mr-1">Dropdown</span>
-            <svg
-              className="fill-current h-4 w-4"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-            >
-              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
-            </svg>
-          </button>
-          <ul className="dropdown-menu absolute hidden text-gray-700 pt-1">
-            <li className="">
-              <a
-                className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                href="#"
-              >
-                One
-              </a>
-            </li>
-            <li className="">
-              <a
-                className="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                href="#"
-              >
-                Two
-              </a>
-            </li>
-            <li className="">
-              <a
-                className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                href="#"
-              >
-                Three is the magic number
-              </a>
-            </li>
-          </ul>
+        <div className="relative w-full lg:max-w-sm">
+          <select
+            className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600"
+            onChange={handleCountryChange}
+            value={country}
+          >
+            <option value="in">India</option>
+            <option value="us">United States</option>
+            <option value="ru">Russia</option>
+            <option value="cn">China</option>
+            <option value="gb">United Kingdom</option>
+          </select>
         </div>
-        {view ? (
-          <>
-            <Button
-              size="large"
-              onClick={() => setView(!view)}
-              icon={<UnorderedListOutlined style={{ fontSize: "1.5rem" }} />}
-            />
-          </>
-        ) : (
-          <>
-            <Button
-              size="large"
-              onClick={() => setView(!view)}
-              icon={<AppstoreOutlined style={{ fontSize: "1.5rem" }} />}
-            />
-          </>
-        )}
-      </div>
-      {articles.map((article) => (
-        <div>
+
+        <div className="relative w-full lg:max-w-sm">
+          <select
+            className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600"
+            onChange={handleCategoryChange}
+            value={category}
+          >
+            <option value="general">General</option>
+            <option value="business">Business</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="sports">Sports</option>
+            <option value="technology">Technology</option>
+          </select>
+        </div>
+
+        <div className="inline-flex items-center ml-5 space-x-6 lg:justify-end">
           {view ? (
-            <div>
-              <div>
-                <ListCard news={article} />
-              </div>
+            <div className="justify-end">
+              <Button
+                size="large"
+                onClick={() => setView(!view)}
+                icon={<UnorderedListOutlined style={{ fontSize: "1.5rem" }} />}
+              />
             </div>
           ) : (
-            <div>
-              <GridCard news={article} />
+            <div className="justify-end">
+              <Button
+                size="large"
+                onClick={() => setView(!view)}
+                icon={<AppstoreOutlined style={{ fontSize: "1.5rem" }} />}
+              />
             </div>
+          )}
+        </div>
+      </div>
+      {articles.map((article, index) => (
+        <div className="flex" key={index}>
+          {view ? (
+            <div>
+              <ListCard news={article} />
+            </div>
+          ) : (
+            <GridCard news={article} />
           )}
         </div>
       ))}
