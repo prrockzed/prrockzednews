@@ -5,7 +5,6 @@ import { Button, Row } from "antd";
 import GridCard from "./gridCard";
 import ListCard from "./listCard";
 import { UnorderedListOutlined, AppstoreOutlined } from "@ant-design/icons";
-import { NEWS_API_KEY } from "./apiKey";
 
 function dashboard() {
   const [view, setView] = useState(true);
@@ -14,7 +13,7 @@ function dashboard() {
   const [category, setCategory] = useState("general");
   const [maxNews, setMaxNews] = useState(20);
 
-  const API_KEY = NEWS_API_KEY;
+  const API_KEY = process.env.NEXT_PUBLIC_NEWS_API_KEY;
   const API_URL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&pageSize=${maxNews}&apiKey=${API_KEY}`;
 
   useEffect(() => {

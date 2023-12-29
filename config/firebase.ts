@@ -1,8 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { FIREBASE_API_KEY } from "./apiKey";
 import { getAuth } from "firebase/auth";
 
-const firebaseapikey = FIREBASE_API_KEY;
+const firebaseapikey = process.env.NEXT_PUBLIC_FIREBASE_API_KEY;
 const firebaseConfig = {
   apiKey: firebaseapikey,
   authDomain: "prrockzednews.firebaseapp.com",
