@@ -3,22 +3,21 @@ import React from "react";
 
 const { Meta } = Card;
 
-const gridCard = () => {
+const gridCard = ({ news }) => {
   return (
-    <div>
+    <>
       <Col>
-        <Card
-          hoverable
-          style={{ width: 300 }}
-          cover={<img src="/cardImage.png" alt="images" />}
-        >
-          <Meta
-            title="Sample Card Grid View"
-            description="Lorem sit deserunt ullamco in voluptate. Mollit labore adipisicing labore sunt labore ex amet. Consectetur enim tempor do et. Aliqua pariatur nostrud quis ipsum dolor cupidatat aliqua amet veniam labore consectetur. Cupidatat deserunt in qui laborum duis."
-          />
-        </Card>
+        <a className="no-underline" href={news.url} target="_blank">
+          <Card
+            hoverable
+            style={{ width: 300 }}
+            cover={<img src={news.urlToImage} alt="images" />}
+          >
+            <Meta title={news.title} description={news.description} />
+          </Card>
+        </a>
       </Col>
-    </div>
+    </>
   );
 };
 
