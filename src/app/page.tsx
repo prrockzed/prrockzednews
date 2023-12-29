@@ -100,7 +100,7 @@ export default function Home() {
                   Jam-packed with all the news you need!
                 </h2>
                 <p className="mb-4 font-medium tracking-tight text-gray-400 xl:mb-6">
-                  It's never been easier to read news on the go.
+                  It&apos;s never been easier to read news on the go.
                 </p>
                 <ul>
                   <li className="flex items-center py-2 space-x-4 xl:py-3">

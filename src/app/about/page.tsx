@@ -1,5 +1,6 @@
 import React from "react";
 import "./page.css";
+import Image from "next/image";
 
 const about = () => {
   return (
@@ -47,7 +48,7 @@ const about = () => {
               data-wow-duration="1500ms"
             >
               <div className="image">
-                <img src="/image.jpg" alt="" />
+                <Image width={100} height={100} src="/image.jpg" alt="" />
               </div>
             </div>
           </div>
