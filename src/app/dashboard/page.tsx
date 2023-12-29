@@ -6,7 +6,7 @@ import GridCard from "./gridCard";
 import ListCard from "./listCard";
 import { UnorderedListOutlined, AppstoreOutlined } from "@ant-design/icons";
 
-function dashboard() {
+function Dashboard() {
   const [view, setView] = useState(true);
   const [articles, setArticles] = useState([]);
   const [country, setCountry] = useState("in");
@@ -125,4 +125,4 @@ function dashboard() {
   );
 }
 
-export default dashboard;
+export default Dashboard;

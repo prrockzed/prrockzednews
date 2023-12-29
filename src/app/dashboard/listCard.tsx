@@ -6,7 +6,7 @@ const listCard = ({ news }: any) => {
   return (
     <div>
       {news.map((article: any, index: number) => (
-        <div style={{ marginBottom: "1rem" }}>
+        <div key={index} style={{ marginBottom: "1rem" }}>
           <a className="no-underline" href={article.url} target="_blank">
             <Card hoverable>
               {article.urlToImage ? (
