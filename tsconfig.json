@@ -27,8 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/dashboard/viewGridList.jsx",
-    "src/app/dashboard/dataContext.jsx"
+    "src/app/dashboard/viewGridList.tsx",
+    "src/app/dashboard/dataContext.tsx"
   ],
   "exclude": ["node_modules"]
 }

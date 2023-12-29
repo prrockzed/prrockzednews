@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../../../../context/AuthContext";
 import { useRouter } from "next/navigation";
-import { ViewGridList } from "../../dashboard/viewGridList.jsx";
 
 const Header = () => {
   const { user, logout } = useAuth();
@@ -49,7 +48,6 @@ const Header = () => {
 
         {user ? (
           <div className="inline-flex items-center ml-5 space-x-6 lg:justify-end">
-            <ViewGridList />
             <a
               className="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap transition duration-150 ease-in-out hover:text-black"
               onClick={() => {
